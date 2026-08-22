@@ -1,6 +1,8 @@
 PFO Nº1-Desarrollo de Sistemas Web - Frontend
 Landing de portafolio personal con HTML y CSS
 
+URL de Vercel: https://mi-portfolio-omega-liart.vercel.app/
+
 
 Documentación del uso de IA:
 Utilización de claude.ai para el diseño y maquetación.

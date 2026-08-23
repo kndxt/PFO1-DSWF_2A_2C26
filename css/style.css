@@ -498,60 +498,6 @@ a {
 .contact-form .btn {
   align-self: flex-start;
 }
-
-/* =========================================================
-   FOOTER
-   ========================================================= */
-.site-footer {
-  text-align: center;
-  padding: 2.5rem 1.5rem;
-  border-top: 1px solid var(--hairline);
-  font-family: var(--font-mono);
-  font-size: 0.85rem;
-  color: var(--dust);
-}
-
-.footer-status {
-  margin-top: 0.5rem;
-  color: var(--rose);
-  animation: flicker 5s infinite;
-}
-
-/* =========================================================
-   ANIMACIONES
-   ========================================================= */
-@keyframes blink {
-  50% { opacity: 0; }
-}
-
-@keyframes rose-spin {
-  from { transform: translate(-50%, -50%) rotate(0deg); }
-  to   { transform: translate(-50%, -50%) rotate(360deg); }
-}
-
-@keyframes glitch-shift {
-  0%   { transform: translate(0, 0); }
-  50%  { transform: translate(-2px, 1px); }
-  100% { transform: translate(2px, -1px); }
-}
-
-@keyframes fill-bar {
-  from { width: 0; }
-}
-
-/* Parpadeo irregular tipo cartel de neón viejo */
-@keyframes flicker {
-  0%, 19%, 21%, 23%, 100% { opacity: 1; }
-  20%, 22% { opacity: 0.4; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-}
 /* =========================================================
    PROYECTOS / TARJETAS
    ========================================================= */
@@ -790,6 +736,60 @@ a {
   line-height: 1.4;
   margin: 0;
 }
+/* =========================================================
+   FOOTER
+   ========================================================= */
+.site-footer {
+  text-align: center;
+  padding: 2.5rem 1.5rem;
+  border-top: 1px solid var(--hairline);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--dust);
+}
+
+.footer-status {
+  margin-top: 0.5rem;
+  color: var(--rose);
+  animation: flicker 5s infinite;
+}
+
+/* =========================================================
+   ANIMACIONES
+   ========================================================= */
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+@keyframes rose-spin {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to   { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes glitch-shift {
+  0%   { transform: translate(0, 0); }
+  50%  { transform: translate(-2px, 1px); }
+  100% { transform: translate(2px, -1px); }
+}
+
+@keyframes fill-bar {
+  from { width: 0; }
+}
+
+/* Parpadeo irregular tipo cartel de neón viejo */
+@keyframes flicker {
+  0%, 19%, 21%, 23%, 100% { opacity: 1; }
+  20%, 22% { opacity: 0.4; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
 /* =========================================================
    RESPONSIVE
    ========================================================= */

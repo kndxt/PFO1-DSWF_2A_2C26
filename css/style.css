@@ -552,7 +552,244 @@ a {
     transition-duration: 0.01ms !important;
   }
 }
+/* =========================================================
+   PROYECTOS / TARJETAS
+   ========================================================= */
+.projects-grid {
+  display: grid;
+  /* Requisito PFO1: Grid responsive fluido con unidades relativas */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  list-style: none;
+}
 
+.project-card {
+  position: relative;
+  background: var(--panel);
+  border: 1px solid var(--hairline);
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  /* Requisito PFO1: Transición armónica */
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Detalles de herrería en las esquinas */
+.project-card::before,
+.project-card::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border: 1px solid var(--violet);
+  opacity: 0.6;
+  transition: border-color 0.3s ease, opacity 0.3s ease;
+}
+
+.project-card::before {
+  top: -1px;
+  left: -1px;
+  border-right: none;
+  border-bottom: none;
+}
+
+.project-card::after {
+  bottom: -1px;
+  right: -1px;
+  border-left: none;
+  border-top: none;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--rose);
+  box-shadow: 0 10px 30px rgba(255, 47, 126, 0.15);
+}
+
+.project-card:hover::before,
+.project-card:hover::after {
+  border-color: var(--rose);
+  opacity: 1;
+}
+
+.project-title {
+  font-family: var(--font-display);
+  color: var(--rose);
+  font-size: 1.3rem;
+  text-shadow: 0 0 8px rgba(255, 47, 126, 0.2);
+}
+
+.project-desc {
+  color: var(--dust);
+  font-size: 0.95rem;
+  flex-grow: 1; /* Permite que los tags bajen si las tarjetas tienen alto distinto */
+}
+
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.tech-stack span {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--violet);
+  background: var(--void);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  padding: 0.25rem 0.6rem;
+  border-radius: 2px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+/* Contenedor de la imagen del proyecto */
+.project-visual {
+  width: 100%;
+  height: 180px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  border: 1px solid var(--violet); /* Marco sutil para la imagen */
+  border-radius: 2px;
+}
+
+.project-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Asegura que la imagen no se deforme */
+  filter: grayscale(0.8) brightness(0.7); /* Filtro gótico/oscuro por defecto */
+  transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+/* Efecto al pasar el mouse por toda la tarjeta */
+.project-card:hover .project-visual img {
+  filter: grayscale(0) brightness(1); /* Vuelve al color original */
+  transform: scale(1.05); /* Zoom suave */
+}
+/* =========================================================
+   CINE / INSPIRACIÓN (Estilo Póster Revelable)
+   ========================================================= */
+.movies-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 2rem;
+  gap: 1rem;
+}
+
+.movies-header h2 {
+  margin-bottom: 0;
+}
+
+.letterboxd-btn {
+  font-size: 0.8rem;
+  padding: 0.5rem 1rem;
+}
+
+.movies-grid {
+  display: grid;
+  /* El ancho mínimo define qué tan finitos se hacen los pósters en celular */
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2.5rem;
+  justify-items: center;
+}
+
+.movie-poster {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+  aspect-ratio: 2 / 3; /* Mantiene la proporción clásica de cine */
+  background: var(--void);
+  border: 1px solid var(--hairline);
+  overflow: hidden;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  cursor: crosshair; /* Cursor especial al pasar por el póster */
+}
+
+/* La imagen de fondo tiene un filtro oscuro que se aclara al pasar el mouse */
+.movie-poster img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(0.6) brightness(0.6) contrast(1.2);
+  transition: filter 0.4s ease, transform 0.4s ease;
+}
+
+.movie-poster:hover img {
+  filter: grayscale(0) brightness(1) contrast(1);
+  transform: scale(1.03);
+}
+
+.movie-poster:hover {
+  border-color: var(--rose);
+  box-shadow: 0 0 20px rgba(255, 47, 126, 0.2);
+  transform: translateY(-5px);
+}
+
+/* Indicador central "ESCANEAR" */
+.hover-indicator {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--rose);
+  background: rgba(7, 2, 10, 0.85);
+  border: 1px solid var(--rose);
+  padding: 0.5rem 1rem;
+  letter-spacing: 0.1em;
+  pointer-events: none;
+  backdrop-filter: blur(2px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.movie-poster:hover .hover-indicator {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.8);
+}
+
+/* Bloque de texto que sube desde abajo */
+.movie-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.5rem;
+  background: linear-gradient(to top, rgba(7, 2, 10, 0.98) 60%, rgba(7, 2, 10, 0));
+  border-top: 1px solid var(--rose);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  /* Movimiento elástico/fluido sacado del diseño original */
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  z-index: 10;
+}
+
+.movie-poster:hover .movie-info {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.movie-info h4 {
+  font-family: var(--font-display);
+  color: var(--rose);
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 0 8px rgba(255, 47, 126, 0.5);
+}
+
+.movie-info p {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--bone);
+  line-height: 1.4;
+  margin: 0;
+}
 /* =========================================================
    RESPONSIVE
    ========================================================= */

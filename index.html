@@ -4,298 +4,261 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Candelaria Chazarreta · Portfolio</title>
-  <meta name="description" content="Landing de portfolio personal de [Nombre Apellido], estudiante y desarrollador/a web front end.">
+  <meta name="description" content="Landing de portfolio personal de Candelaria Chazarreta, estudiante de sistemas y desarrolladora enfocada en ciberseguridad.">
 
-  <!-- Google Fonts: Orbitron (títulos), Rajdhani (texto), Space Mono (etiquetas tipo terminal) -->
+  <!-- Google Fonts: Cinzel (Gótico/Elegante), Manrope (Limpio/Moderno), Share Tech Mono (Terminal) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Manrope:wght@400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Manrope:wght@300;400;600&family=Share+Tech+Mono&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
 
-  <!-- Capa de scanlines: puramente decorativa, no aporta contenido -->
+  <!-- Capa de scanlines: sutileza mejorada -->
   <div class="scanlines" aria-hidden="true"></div>
 
-  <!-- HEADER: contiene la navegación principal fija -->
-  <header class="site-header">
+  <!-- HEADER -->
+  <header class="site-header" role="banner">
     <nav class="navbar" aria-label="Navegación principal">
-      <a href="#inicio" class="logo">CC<span class="cursor">_</span></a>
+      <a href="#inicio" class="logo" aria-label="Ir al inicio">CC<span class="cursor">_</span></a>
       <ul class="nav-links">
         <li><a href="#sobre-mi">Perfil</a></li>
         <li><a href="#habilidades">Habilidades</a></li>
         <li><a href="#proyectos">Proyectos</a></li>
-        <li><a href="#personal">Personal</a></li>
+        <li><a href="#personal">Cine</a></li>
         <li><a href="#contacto">Contacto</a></li>
         <li>
-          <a href="https://github.com/kndxt" target="_blank" rel="noopener noreferrer" class="github-link">
-            GitHub
+          <!-- Requisito PFO1: Enlace visible a GitHub -->
+          <a href="https://github.com/kndxt" target="_blank" rel="noopener noreferrer" class="github-link" aria-label="Visitar mi perfil de GitHub">
+            GitHub <span aria-hidden="true">↗</span>
           </a>
         </li>
       </ul>
     </nav>
   </header>
 
-  <!-- MAIN: contenido central del landing -->
-  <main>
+  <!-- MAIN -->
+  <main role="main">
 
-    <!-- HERO: primera pantalla, presenta nombre y rol -->
-    <section id="inicio" class="hero">
-      <div class="hero-grid" aria-hidden="true"></div>
+    <!-- HERO -->
+    <section id="inicio" class="hero" aria-labelledby="hero-title">
+      <div class="hero-glow" aria-hidden="true"></div>
       <div class="hero-content">
-        <p class="eyebrow">&gt; INICIANDO_TRANSMISIÓN</p>
-        <h1 class="glitch" data-text="CANDELARIA CHAZARRETA">CANDELARIA CHAZARRETA</h1>
+        <p class="eyebrow">&gt; SYS_INIT: SECURE_CONNECTION</p>
+        <h1 id="hero-title" class="title">Candelaria Chazarreta</h1>
         <p class="hero-role">Estudiante de Desarrollo de Sistemas Web</p>
-        <p class="hero-tagline">Fusionando la creatividad del arte con la rigurosidad de la investigación y el desarrollo de software para dar vida a sistemas seguros y con propósito</p>
+        <p class="hero-tagline">Fusionando la psicología y la rigurosidad analítica con el desarrollo de software para dar vida a sistemas seguros, robustos y con propósito.</p>
         <div class="hero-actions">
-          <a href="#contacto" class="btn btn-primary">HABLEMOS!</a>
+          <a href="#contacto" class="btn btn-primary">Iniciar Transmisión</a>
           <a href="https://github.com/kndxt" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
-            MI GitHub
+            Explorar GitHub
           </a>
         </div>
       </div>
     </section>
 
-    <!-- SOBRE MÍ: presentación personal, requisito de la consigna -->
-    <section id="sobre-mi" class="section about">
-      <h2><span class="prompt">&gt;_</span> Perfil</h2>
+    <!-- SOBRE MÍ -->
+    <section id="sobre-mi" class="section about" aria-labelledby="about-title">
+      <h2 id="about-title"><span class="prompt">&gt;_</span> Perfil_Analítico</h2>
       <div class="about-content">
-        <img
-          src="/assets/avatar.png"
-          alt="avatar"
-          class="profile-photo"
-          width="440"
-          height="440"
-        >
+        <div class="profile-wrapper">
+          <img
+            src="/assets/avatar-1.png"
+            alt="Fotografía de Candelaria Chazarreta"
+            class="profile-photo"
+            width="300"
+            height="300"
+            loading="lazy"
+          >
+        </div>
         <div class="about-text">
           <p>
-            Hola! soy Candelaria, Desarrolladora de Software con alma investigadora y artística. Me apasiona crear experiencias digitales atractivas y funcionales, combinando diseño y desarrollo para ofrecer soluciones innovadoras.
+            Hola, soy Candelaria. Futura Desarrolladora de software con un paso previo por la psicología y una mente profundamente investigativa. Creo firmemente que para proteger los sistemas de información, primero hay que entender tanto su estructura lógica como el comportamiento de quienes los usan. 
+          </p>
+          <p>
+            Mi enfoque combina la rigurosidad analítica con la creatividad, buscando siempre soluciones que sean seguras, eficientes y centradas en el usuario. Me apasiona aprender nuevas tecnologías y aplicarlas para resolver problemas complejos de manera innovadora.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- HABILIDADES: grid de tarjetas con nivel, usa CSS Grid -->
-    <section id="habilidades" class="section skills">
-      <h2><span class="prompt">&gt;_</span> Habilidades</h2>
+    <!-- HABILIDADES -->
+    <section id="habilidades" class="section skills" aria-labelledby="skills-title">
+      <h2 id="skills-title"><span class="prompt">&gt;_</span> Stack_Tecnológico</h2>
       <ul class="skills-grid">
         <li class="skill-card">
-          <span class="skill-name">HTML5</span>
-          <div class="skill-bar"><span style="--level: 85%;"></span></div>
+          <span class="skill-name">Frontend / Maquetación</span>
+          <p class="skill-tags">HTML5 · CSS3 · React · JavaScript</p>
         </li>
         <li class="skill-card">
-          <span class="skill-name">CSS3</span>
-          <div class="skill-bar"><span style="--level: 85%;"></span></div>
+          <span class="skill-name">Backend / Base de Datos</span>
+          <p class="skill-tags">Node.js · C# · MySQL · SQLite · Sequelize</p>
         </li>
         <li class="skill-card">
-          <span class="skill-name">C#</span>
-          <div class="skill-bar"><span style="--level: 70%;"></span></div>
+          <span class="skill-name">Móvil / APIs</span>
+          <p class="skill-tags">Kotlin · TypeScript · Postman</p>
         </li>
         <li class="skill-card">
-          <span class="skill-name">JavaScript</span>
-          <div class="skill-bar"><span style="--level: 65%;"></span></div>
-        </li>
-        <li class="skill-card">
-          <span class="skill-name">Kotlin</span>
-          <div class="skill-bar"><span style="--level: 50%;"></span></div>
-        </li>
-        <li class="skill-card">
-          <span class="skill-name">TypeScript</span>
-          <div class="skill-bar"><span style="--level: 10%;"></span></div>
-        </li>
-        <li class="skill-card">
-          <span class="skill-name">MySQL</span>
-          <div class="skill-bar"><span style="--level: 50%;"></span></div>
-        </li>
-        <li class="skill-card">
-          <span class="skill-name">MySQLite</span>
-          <div class="skill-bar"><span style="--level: 50%;"></span></div>
-        </li>
-        <li class="skill-card">
-          <span class="skill-name">Postman</span>
-          <div class="skill-bar"><span style="--level: 50%;"></span></div>
-        </li>
-        <li class="skill-card">
-          <span class="skill-name">Sequelize</span>
-          <div class="skill-bar"><span style="--level: 20%;"></span></div>
-        </li>
-        <li class="skill-card">
-          <span class="skill-name">Node JS</span>
-          <div class="skill-bar"><span style="--level: 40%;"></span></div>
-        </li>
-        <li class="skill-card">
-          <span class="skill-name">React</span>
-          <div class="skill-bar"><span style="--level: 30%;"></span></div>
-        </li>
-        <li class="skill-card">
-          <span class="skill-name">Git / GitHub</span>
-          <div class="skill-bar"><span style="--level: 50%;"></span></div>
-        </li>
-        <li class="skill-card">
-          <span class="skill-name">Figma</span>
-          <div class="skill-bar"><span style="--level: 50%;"></span></div>
+          <span class="skill-name">Herramientas / Diseño</span>
+          <p class="skill-tags">Git · GitHub · Figma · UI/UX</p>
         </li>
       </ul>
     </section>
-<!-- MIS PROYECTOS: Reemplaza a la sección personal -->
-    <section id="proyectos" class="section projects">
-      <h2><span class="prompt">&gt;_</span> Mis Proyectos</h2>
+
+    <!-- MIS PROYECTOS -->
+    <section id="proyectos" class="section projects" aria-labelledby="projects-title">
+      <h2 id="projects-title"><span class="prompt">&gt;_</span> Registro_De_Proyectos</h2>
       <ul class="projects-grid">
         
-        <!-- Proyecto 1: Mercado Liebre -->
+        <!-- Proyecto 1 -->
         <li class="project-card">
           <div class="project-visual">
-            <img src="/assets/mercado-liebre.jpg" alt="Vista previa de Mercado Liebre">
+            <img src="/assets/mercado-liebre.jpg" alt="Vista previa de Mercado Liebre" loading="lazy">
           </div>
-          <h3 class="project-title">Mercado Liebre</h3>
-          <p class="project-desc">Maquetación simulada de la plataforma e-commerce líder, centrada en la interfaz y experiencia de usuario (UI/UX).</p>
-          <div class="tech-stack">
-            <span>HTML5</span>
-            <span>CSS3</span>
-            <span>JavaScript</span>
+          <div class="project-content">
+            <h3 class="project-title">Mercado Liebre</h3>
+            <p class="project-desc">Maquetación simulada de plataforma e-commerce centrada en UI/UX accesible.</p>
+            <div class="tech-stack">
+              <span>HTML5</span><span>CSS3</span><span>JS</span>
+            </div>
           </div>
         </li>
 
-        <!-- Proyecto 2: PizzaRock -->
+        <!-- Proyecto 2 -->
         <li class="project-card">
           <div class="project-visual">
-            <img src="/assets/pizzarock.jpg" alt="Vista previa de la página web de PizzaRock">
+            <img src="/assets/pizzarock.jpg" alt="Vista previa de PizzaRock" loading="lazy">
           </div>
-          <h3 class="project-title">PizzaRock</h3>
-          <p class="project-desc">Página web gastronómica integral para pizzería local, incluyendo gestión de base de datos y consumo de APIs.</p>
-          <div class="tech-stack">
-            <span>React</span>
-            <span>Node.js</span>
-            <span>JavaScript</span>
-            <span>SQL</span>
-            <span>APIs</span>
-            <span>Postman</span>
+          <div class="project-content">
+            <h3 class="project-title">PizzaRock</h3>
+            <p class="project-desc">Sistema web gastronómico con gestión de base de datos y consumo de APIs REST.</p>
+            <div class="tech-stack">
+              <span>React</span><span>Node.js</span><span>SQL</span>
+            </div>
           </div>
         </li>
-
+        
         <!-- Proyecto 3: Club Deportivo (Escritorio) -->
         <li class="project-card">
           <div class="project-visual">
-            <img src="/assets/program-clubdepo.jpg" alt="Vista previa del software de gestión del club deportivo">
+            <img src="/assets/program-clubdepo.jpg" alt="Vista previa del software de gestión del club deportivo" loading="lazy">
           </div>
-          <h3 class="project-title">Gestión Club Deportivo</h3>
-          <p class="project-desc">Software de escritorio para la administración integral de socios, cuotas y actividades del establecimiento deportivo.</p>
-          <div class="tech-stack">
-            <span>C#</span>
-            <span>SQL</span>
-            <span>Visual Studio 2022</span>
+          <div class="project-content">
+            <h3 class="project-title">Gestión Club Deportivo</h3>
+            <p class="project-desc">Software de escritorio para la administración integral de socios, cuotas y actividades del establecimiento deportivo.</p>
+            <div class="tech-stack">
+              <span>C#</span><span>SQL</span><span>Visual Studio</span>
+            </div>
           </div>
         </li>
 
         <!-- Proyecto 4: Club Deportivo (Móvil) -->
         <li class="project-card">
           <div class="project-visual">
-            <img src="/assets/app-clubdepo.jpg" alt="Vista previa de la aplicación móvil del club deportivo">
+            <img src="/assets/app-clubdepo.jpg" alt="Vista previa de la App del Club Deportivo" loading="lazy">
           </div>
-          <h3 class="project-title">App Club Deportivo</h3>
-          <p class="project-desc">Aplicación móvil nativa para que los socios interactúen directamente con los servicios y notificaciones del club.</p>
-          <div class="tech-stack">
-            <span>Kotlin</span>
-            <span>SQLite</span>
-            <span>Android Studio</span>
+          <div class="project-content">
+            <h3 class="project-title">App Club Deportivo</h3>
+            <p class="project-desc">Aplicación móvil nativa orientada a la interacción directa de socios y servicios del club.</p>
+            <div class="tech-stack">
+              <span>Kotlin</span><span>SQLite</span><span>Android Studio</span>
+            </div>
           </div>
         </li>
+
+
         <!-- Proyecto 5: Prototipo Clínica -->
         <li class="project-card">
           <div class="project-visual">
-            <img src="/assets/proto-figma.png" alt="Vista previa del prototipo en Figma">
+            <img src="/assets/proto-figma.png" alt="Vista previa del prototipo del Sistema Clínico en Figma" loading="lazy">
           </div>
-          <h3 class="project-title">Sistema Clínico</h3>
-          <p class="project-desc">Prototipado UI/UX para la gestión de turnos médicos y consultorios. Diseño enfocado en la experiencia del usuario y la adaptación a reglas de negocio de múltiples especialidades.</p>
-          <div class="tech-stack">
-            <span>Figma</span>
-            <span>UI/UX Design</span>
-            <span>Prototipado</span>
+          <div class="project-content">
+            <h3 class="project-title">Sistema Clínico</h3>
+            <p class="project-desc">Prototipado UI/UX para la gestión de turnos médicos y consultorios. Diseño enfocado en la experiencia del usuario y reglas de negocio.</p>
+            <div class="tech-stack">
+              <span>Figma</span><span>UI/UX</span><span>Prototipado</span>
+            </div>
           </div>
         </li>
       </ul>
     </section>
-    <!-- SECCIÓN CINE / INSPIRACIÓN -->
-    <section id="personal" class="section movies">
+
+    <!-- SECCIÓN PERSONAL -->
+    <section id="personal" class="section movies" aria-labelledby="movies-title">
       <div class="movies-header">
-        <h2><span class="prompt">&gt;_</span> Data_Cinematográfica</h2>
-        <!-- Botón de Letterboxd -->
+        <h2 id="movies-title"><span class="prompt">&gt;_</span> Archivo_Cinematográfico</h2>
         <a href="https://boxd.it/2oyID" target="_blank" rel="noopener noreferrer" class="btn btn-secondary letterboxd-btn">
-          Mi perfil en Letterboxd
+          Perfil Letterboxd ↗
         </a>
       </div>
+      <p class="section-intro">El análisis psicológico y la atmósfera gótica como inspiración visual y narrativa.</p>
       
       <div class="movies-grid">
-        <!-- Póster 1 -->
         <article class="movie-poster">
-          <img src="/assets/the-shinning-p.jpg" alt="Poster de película" width="300" height="450">
-          <span class="hover-indicator">ESCANEAR</span>
+          <img src="/assets/the-shinning-p.jpg" alt="Póster de The Shining" width="300" height="450" loading="lazy">
           <div class="movie-info">
-            <h4>The Shinning (1980)</h4>
-            <p>Dirigido por Stanley Kubrick</p>
+            <h4>The Shining (1980)</h4>
+            <p>Dir. Stanley Kubrick</p>
           </div>
         </article>
-
-        <!-- Póster 2 -->
         <article class="movie-poster">
-          <img src="/assets/suspiria-1977-p.jpg" alt="Poster de película" width="300" height="450">
-          <span class="hover-indicator">ESCANEAR</span>
+          <img src="/assets/suspiria-1977-p.jpg" alt="Póster de Suspiria" width="300" height="450" loading="lazy">
           <div class="movie-info">
             <h4>Suspiria (1977)</h4>
-            <p>Dirigido por Dario Argento</p>
+            <p>Dir. Dario Argento</p>
           </div>
         </article>
-
-        <!-- Póster 3 -->
         <article class="movie-poster">
-          <img src="/assets/melancholia-2011-p.jpg" alt="Poster de película" width="300" height="450">
-          <span class="hover-indicator">ESCANEAR</span>
+          <img src="/assets/melancholia-2011-p.jpg" alt="Póster de Melancholia" width="300" height="450" loading="lazy">
           <div class="movie-info">
             <h4>Melancholia (2011)</h4>
-            <p>Dirigido por Lars von Trier</p>
+            <p>Dir. Lars von Trier</p>
           </div>
         </article>
-         <!-- Póster 4 -->
         <article class="movie-poster">
-          <img src="/assets/possession-p.jpg" alt="Poster de película" width="300" height="450">
-          <span class="hover-indicator">ESCANEAR</span>
+          <img src="/assets/possession-p.jpg" alt="Póster de Possession" width="300" height="450" loading="lazy">
           <div class="movie-info">
             <h4>Possession (1981)</h4>
-            <p>Dirigido por Andrzej Żuławski </p>
+            <p>Dir. Andrzej Żuławski</p>
           </div>
         </article>
       </div>
     </section>
-    <!-- CONTACTO: formulario accesible con label asociado a cada input -->
-    <section id="contacto" class="section contact">
-      <h2><span class="prompt">&gt;_</span> Contacto</h2>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="section contact" aria-labelledby="contact-title">
+      <h2 id="contact-title"><span class="prompt">&gt;_</span> Establecer_Contacto</h2>
       <form class="contact-form" action="#" method="post">
         <div class="form-group">
-          <label for="name">Nombre</label>
-          <input type="text" id="name" name="name" required>
+          <!-- Requisito PFO1: form con label -->
+          <label for="name">Identificación (Nombre)</label>
+          <input type="text" id="name" name="name" required placeholder="Ej: Candelaria">
         </div>
         <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" required>
+          <label for="email">Enlace de retorno (Email)</label>
+          <input type="email" id="email" name="email" required placeholder="correo@dominio.com">
         </div>
         <div class="form-group">
-          <label for="message">Mensaje</label>
-          <textarea id="message" name="message" rows="5" required></textarea>
+          <label for="message">Mensaje cifrado</label>
+          <textarea id="message" name="message" rows="4" required placeholder="Escribe tu mensaje aquí..."></textarea>
         </div>
-        <button type="submit" class="btn btn-primary">Enviar transmisión</button>
+        <button type="submit" class="btn btn-primary">Enviar Datos</button>
       </form>
     </section>
 
   </main>
 
-  <!-- FOOTER: cierre con enlace a GitHub, requisito visible de la consigna -->
-  <footer class="site-footer">
-    <p>
-      © 2026 CANDELARIA CHAZARRETA ·
-      <a href="https://github.com/kndxt" target="_blank" rel="noopener noreferrer">GitHub</a>
-    </p>
-    <p class="footer-status">SYSTEM_READY<span class="cursor">_</span></p>
+  <!-- FOOTER -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-content">
+      <p>© 2026 CANDELARIA CHAZARRETA</p>
+      <div class="footer-links">
+        <a href="https://github.com/kndxt" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </div>
+    </div>
+    <p class="footer-status">SYSTEM_READY <span class="cursor">_</span></p>
   </footer>
 
 </body>
